@@ -7,8 +7,13 @@ tags:
 标题: 百度文心AI写手：Python脚本自动化自媒体内容生成
 其他: 
 share: "true"
+profileName: Default
+postId: "4030"
+categories:
+  - 55
 ---
 
+降低百度文心 4.0 的使用成本：文心 4.0 的 api 调用
 
 下面的代码是一个 Python 脚本，用于自动化地从百度文心 api 生成内容，并将这些内容转换为 Markdown 格式保存。这个过程涉及从 Excel 文件中读取提示词和标题，然后使用这些提示词通过百度 AI 的聊天模型 API 生成文本内容，最后将内容保存为 Markdown 文件，以便在像 Obsidian 这样的笔记应用程序中使用。
 
