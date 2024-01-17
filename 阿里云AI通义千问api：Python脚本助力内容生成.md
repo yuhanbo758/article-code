@@ -6,6 +6,10 @@ tags:
   - 完整代码
 标题: 阿里云AI通义千问api：Python脚本助力内容生成
 share: "true"
+profileName: Default
+postId: "4038"
+categories:
+  - 55
 ---
 
 
