@@ -6,6 +6,10 @@ tags:
   - 完整代码
 标题: 轻松管理数据：如何将Pickle文件转存至SQLite数据库
 share: "true"
+profileName: Default
+postId: "4040"
+categories:
+  - 55
 ---
 
 
