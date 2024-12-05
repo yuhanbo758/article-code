@@ -4,6 +4,8 @@
 
 1.0 版本文章请前往：[QMT与通达信结合，实现专属量化交易：通达信自动交易系统 | 余汉波 文档](https://wd.sanrenjz.com/%E4%BB%A3%E7%A0%81%E4%B8%8E%E6%95%88%E7%8E%87/QMT%E4%B8%8E%E9%80%9A%E8%BE%BE%E4%BF%A1%E7%BB%93%E5%90%88%EF%BC%8C%E5%AE%9E%E7%8E%B0%E4%B8%93%E5%B1%9E%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%EF%BC%9A%E9%80%9A%E8%BE%BE%E4%BF%A1%E8%87%AA%E5%8A%A8%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F)
 
+2.0 版本视频请前往： [QMT与通达信结合2.0，监测交易系统：通达信自动交易系统_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1F6iUYqEmf/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 2.0 版本主要增加了一个自动删除通达信板块中已经全部成交的功能
 
 ### 一、程序目的与功能
@@ -91,7 +93,7 @@ graph TD
 
 该内容与微信公众号的付费阅读和本站点的“付费阅读”绑定：
 
-1. 公众号的付费阅读可以直接获得下载或阅读内容，关注微信公众号：余汉波-文章视频-付费阅读，找到对应的内容，或跳转至：[QMT与通达信结合，实现专属量化交易：通达信自动交易系统](https://mp.weixin.qq.com/s?__biz=MzUyMzQwNzcwMg%3D%3D&mid=2247495404&idx=2&sn=ae1879aa538bd579ffffc1fbec28367f&chksm=fa3fb6d5cd483fc3bed0b91e227b89aeae26439622548b60c454af0cf8c4e5402a23ba64701b&payreadticket=HLaPFeQQ7GuHWJr01AD6fYnVUxU_3STuGP2_GBv9ZTS-qUjtwR_bKHwFBMR8NqSuRjRrdTQ#rd)
-1. 扫描打赏二维码，打赏指定金额，截图+标题发送至邮箱（yuhanbo@sanrenjz.com），或发送到微信（yuhanbo758），等待回复的付费阅读密码：[QMT与通达信结合，实现专属量化交易：通达信自动交易系统 | 余汉波 文档](https://wd.sanrenjz.com/%E4%BB%98%E8%B4%B9%E9%98%85%E8%AF%BB/QMT%E4%B8%8E%E9%80%9A%E8%BE%BE%E4%BF%A1%E7%BB%93%E5%90%88%EF%BC%8C%E5%AE%9E%E7%8E%B0%E4%B8%93%E5%B1%9E%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%EF%BC%9A%E9%80%9A%E8%BE%BE%E4%BF%A1%E8%87%AA%E5%8A%A8%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F.html)
+1. 公众号的付费阅读可以直接获得下载或阅读内容，关注微信公众号：余汉波-文章视频-付费阅读，找到对应的内容，或跳转至：[QMT与通达信结合2.0，监测交易系统：通达信自动交易系统 | 余汉波 文档](https://wd.sanrenjz.com/%E4%BB%98%E8%B4%B9%E9%98%85%E8%AF%BB/QMT%E4%B8%8E%E9%80%9A%E8%BE%BE%E4%BF%A1%E7%BB%93%E5%90%882.0%EF%BC%8C%E7%9B%91%E6%B5%8B%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E9%80%9A%E8%BE%BE%E4%BF%A1%E8%87%AA%E5%8A%A8%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F)
+1. 扫描打赏二维码，打赏指定金额，截图+标题发送至邮箱（yuhanbo@sanrenjz.com），或发送到微信（yuhanbo758），等待回复的付费阅读密码：[QMT与通达信结合2.0，监测交易系统：通达信自动交易系统](https://mp.weixin.qq.com/s/E6u77ISri25YtVADPsdotg?payreadticket=HI9lcKe_qwat5LQDz38oNQV5mRZydOas4Nwi43O1aUC5AFgfSKRv0wk45xbNje0OzTuQoWM)
 ![](https://gdsx.sanrenjz.com/PicGo/640.jpg)
 
