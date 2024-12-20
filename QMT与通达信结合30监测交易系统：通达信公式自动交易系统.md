@@ -14,6 +14,8 @@
 1. 相对于 tdx2.zip，tdx3.zip 增加了买入时的“保留资金”参数和卖出时的“资金阈值”参数。
 1. “保留资金”参数是在委托时先检查可用资金，若资金<=“保留资金”，则进行跳过，不再进行买入委托。比如“保留资金”设置为 10000，而你的可用现金为 9900，那么跳过买入委托。如果不需要该参数，设置为 0 即可。
 1. “资金阈值”参数类似，当你的可用资金>=“资金阈值”时，则进行委托委托，不再进行卖出委托，即使卖出板块有相应的股票，以此来保持一定的持仓。比如“资金阈值”设置为 10000，而你的可用现金为 11000，那么跳过卖出委托，保持原有持仓。如果不需要该参数，设置一个大于自己资产的数字即可，比如 1 千万等。
+3.0 版本视频请前往： [QMT与通达信结合3.0，监测交易系统：通达信公式自动交易系统_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1cZkuY5ErU/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 ### 一、程序目的与功能
 
 该程序主要实现以下功能：
@@ -97,9 +99,5 @@ graph TD
 
 ### 下载或阅读完整内容为付费内容，金额为：99.9
 
-该内容与微信公众号的付费阅读和本站点的“付费阅读”绑定：
-
-1. 公众号的付费阅读可以直接获得下载或阅读内容，关注微信公众号：余汉波-文章视频-付费阅读，找到对应的内容，或跳转至：[QMT与通达信结合2.0，监测交易系统：通达信自动交易系统 | 余汉波 文档](https://wd.sanrenjz.com/%E4%BB%98%E8%B4%B9%E9%98%85%E8%AF%BB/QMT%E4%B8%8E%E9%80%9A%E8%BE%BE%E4%BF%A1%E7%BB%93%E5%90%882.0%EF%BC%8C%E7%9B%91%E6%B5%8B%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E9%80%9A%E8%BE%BE%E4%BF%A1%E8%87%AA%E5%8A%A8%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F)
-1. 扫描打赏二维码，打赏指定金额，截图+标题发送至邮箱（yuhanbo@sanrenjz.com），或发送到微信（yuhanbo758），等待回复的付费阅读密码：[QMT与通达信结合2.0，监测交易系统：通达信自动交易系统](https://mp.weixin.qq.com/s/E6u77ISri25YtVADPsdotg?payreadticket=HI9lcKe_qwat5LQDz38oNQV5mRZydOas4Nwi43O1aUC5AFgfSKRv0wk45xbNje0OzTuQoWM)
-![](https://gdsx.sanrenjz.com/PicGo/640.jpg)
+公众号的付费阅读可以直接获得下载或阅读内容，关注微信公众号：余汉波-文章视频-付费阅读，找到对应的内容，或跳转至：[QMT与通达信结合3.0，监测交易系统：通达信公式自动交易系统](https://mp.weixin.qq.com/s/UL5uBoEmQxs7wYzrkuNfPw?payreadticket=HGc4qT3Y9-mcbRiSV5sCaXNruCQ77-y2yP1wJyKpABw999sLkCNesF6kiulwf8qnLvG2tNY)
 
