@@ -2,6 +2,8 @@
 
 [（非加密）QMT与问财结合-双向交易：问财数据自动化交易系统 | 三人聚智-余汉波程序小店](https://jy.sanrenjz.com/buy/11)
 
+视频：[QMT与问财结合-双向交易：问财数据自动化交易系统_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Z4RHYKE9L/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 # 使用说明
 
 问财的数据爬取利益于开源库 [zsrl/pywencai: 获取同花顺问财数据](https://github.com/zsrl/pywencai)，但在使用该程序系统需要注意下面几点：
@@ -211,6 +213,4 @@ def monitor_file(self, query, action):
 对于可转债，系统强制使用限价委托，以应对可转债市场的特殊性。
 
 ### 5.3 交易时间控制算法
-
-系统实现了交易时间控制算法，允许用户设置买入和卖出的时间范围，避免在不适当的时间交易：
 
