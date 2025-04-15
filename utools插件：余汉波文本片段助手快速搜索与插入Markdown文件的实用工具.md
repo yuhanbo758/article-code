@@ -1,3 +1,7 @@
+[utools插件：余汉波文本片段助手——快速搜索与插入MD文件工具 | 三人聚智-余汉波程序小店](https://jy.sanrenjz.com/buy/23)
+
+github 开源地址：[yuhanbo758/utools-yuhanbo-text: 一个快速搜索并直接插入Markdown文本到当前输入框的uTools插件](https://github.com/yuhanbo758/utools-yuhanbo-text)
+
 # 功能特点和使用方法
 
 一个快速搜索并直接插入 Markdown 文本到当前输入框的 uTools 插件。
@@ -284,8 +288,4 @@ function insertContent(content, insertMode = 'plain') {
 插件支持同时管理多个文件夹中的文本片段，并提供了默认路径设置，使用户可以更灵活地组织和管理自己的文本片段。
 
 ### 6.3 高效的内容插入
-
-通过模拟键盘操作实现内容插入，无需用户手动复制粘贴，大大提高了效率。并且插件还支持不同的插入模式，可以对Markdown内容进行特殊处理，确保内容格式正确。
-
-## 7. 潜在的改进空间
 
