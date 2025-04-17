@@ -1,4 +1,6 @@
-[utools插件：一个基于多模型融合的智能AI助手 | 三人聚智-余汉波程序小店](https://jy.sanrenjz.com/buy/22)
+注：该插件是开源免费的，可以在 utools 应用商店找到。若愿意付费（当作打赏）可以前往程序小店——[utools插件：一个基于多模型融合的智能AI助手 | 三人聚智-余汉波程序小店](https://jy.sanrenjz.com/buy/22)
+
+相关视频：[utools插件：余汉波AI助手，基于多模型融合的智能AI助手_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1UvoTYHEmg/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
 # 使用指南
 
