@@ -1,5 +1,7 @@
 obsidian-yuhanbo-python1.0： [obsidian插件：yuhanbo-python，在笔记中直接运行 Python 代码，提升学习工作效率！ | 余汉波 文档](https://wd.sanrenjz.com/%E4%BB%A3%E7%A0%81%E4%B8%8E%E6%95%88%E7%8E%87/obsidian%E6%8F%92%E4%BB%B6%EF%BC%9Ayuhanbo-python%EF%BC%8C%E5%9C%A8%E7%AC%94%E8%AE%B0%E4%B8%AD%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C%20Python%20%E4%BB%A3%E7%A0%81%EF%BC%8C%E6%8F%90%E5%8D%87%E5%AD%A6%E4%B9%A0%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87%EF%BC%81)
 
+bili 视频：[obsidian插件：在OB中直接运行python和执行定时任务_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1qDjZzHEow/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 程序小店：[obsidian插件：yuhanbo-python2.0，在OB中直接运行python和执行定时任务 | 三人聚智-余汉波程序小店](https://jy.sanrenjz.com/buy/26)
 
 本文档旨在详细解释 Obsidian Python Runner 插件 2.0 的代码，该插件允许用户在 Obsidian 编辑器中运行 Python 代码块，并提供定时任务功能，以便自动化执行特定 MD 文件中的 Python 代码。本文档面向具有一定技术背景但非编程专家的读者，将深入剖析插件的目的、功能、结构、算法、潜在限制以及改进建议。
