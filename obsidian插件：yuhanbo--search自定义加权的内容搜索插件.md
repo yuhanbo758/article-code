@@ -1,3 +1,5 @@
+bili 视频：[obsidian插件：自定义加权的内容搜索插件_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV18ajzzQEKG/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 github 开源地址：[yuhanbo758/obsidian-yuhanbo-search: obsidian的搜索搜索，主要功能是解决搜索加权的问题，可以自行设置标题、属性、引用等的加权搜索](https://github.com/yuhanbo758/obsidian-yuhanbo-search)
 
 程序小店：[obsidian插件：yuhanbo--search，自定义加权的内容搜索插件 | 三人聚智-余汉波程序小店](https://jy.sanrenjz.com/buy/27)
