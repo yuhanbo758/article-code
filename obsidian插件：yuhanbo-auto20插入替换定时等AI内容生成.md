@@ -1,4 +1,6 @@
-bili 视频：[obsidian插件：yuhanbo-auto2.0，插入、替换、定时等AI内容生成_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1r9NqzzESS/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+bili 视频 1：[obsidian插件：yuhanbo-auto2.0，插入、替换、定时等AI内容生成_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1r9NqzzESS/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
+bili 视频 2：[obsidian插件：auto2.0，读取dataview语法，整理处理批量文档_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV14MNEztEj2/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
 程序小店：[obsidian插件：auto2.0 AI内容生成 | 三人聚智-余汉波程序小店](https://jy.sanrenjz.com/buy/33)
 
@@ -19,6 +21,7 @@ auto1.0 在 github 开源：[yuhanbo758/obsidian-yuhanbo-ai](https://github.com/
 1. 直接生成内容：允许用户直接通过 AI 生成内容，并将内容插入到光标所在位置。
 1. 定时任务：允许用户设置定时任务，自动从指定文件读取内容，通过 AI 处理后，保存到指定文件。
 1. 快速生成：允许用户设置快捷键，快速通过 AI 生成内容，并将内容插入到光标所在位置。
+1. 读取 dataview 表格 ：允许用户选中 dataview 的代码，读取关联文章的内容发送给 AI 生成内容，也可以通过定时任务用 AI 来批量处理文档。
 ![](https://xz.sanrenjz.com/image/Pasted%20image%2020250617071818.png?imageSlim)
 
 ## 插件结构
@@ -894,8 +897,4 @@ OpenRouterSettingTab 类是插件的设置 Tab 类，继承自 obsidian.PluginSe
 CustomModelModal 类是插件的自定义模型模态框类，继承自 obsidian.Modal。该类用于显示自定义模型模态框，让用户添加自定义模型。
 
 ### ScheduledTaskModal 类
-
-ScheduledTaskModal 类是插件的定时任务模态框类，继承自 obsidian.Modal。该类用于显示定时任务模态框，让用户添加定时任务。
-
-### QuickGenerateSettingModal 类
 
