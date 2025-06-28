@@ -1,3 +1,5 @@
+bili 视频：[obsidian插件：yuhanbo-task，智能任务管理与番茄时钟插件_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV16pKfzPEBV/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 程序小店：[obsidian插件：yuhanbo-task，智能任务管理与番茄时钟插件 | 三人聚智-余汉波程序小店](https://jy.sanrenjz.com/buy/35)
 
 github 开源：[yuhanbo758/obsidian-yuhanbo-task: Obsidian 智能任务管理与番茄时钟插件，集成 AI 智能拆分的任务管理系统，配备专业番茄时钟，提升工作效率。](https://github.com/yuhanbo758/obsidian-yuhanbo-task)
