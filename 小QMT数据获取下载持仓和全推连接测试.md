@@ -2,7 +2,7 @@ bili 视频：[QMT与通达信结合 5.0：监测交易系统，通达信公式�
 
 github 开源地址：[yuhanbo758/qmt_connect_test: mini QMT连接测试，与下载行情数据](https://github.com/yuhanbo758/qmt_connect_test)
 
-程序一键下载： [下载](https://xz.sanrenjz.com/Download/UnPYQxMskS4W.zip)
+程序一键下载： [下载](https://xz.sanrenjz.com/Download/0srIjIYfj3X9.zip)
 
 程序小店：[程序小店 - QMT量化数据通-连接和数据获取](https://shop.sanrenjz.com/product/68d1e8c123eb0c32a9053faa)
 
