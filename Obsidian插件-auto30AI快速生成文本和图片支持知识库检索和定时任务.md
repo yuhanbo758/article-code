@@ -1,3 +1,5 @@
+bili 视频：[OB插件-auto3.0，AI快速生成文本和图片，支持知识库_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1hmH5zPEUD/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 相关文档：
 
 1. [obsidian插件：yuhanbo-auto2.0，插入、替换、定时等AI内容生成 | 余汉波 文档](https://docs.sanrenjz.com/article/obsidian%E6%8F%92%E4%BB%B6%EF%BC%9Aauto2.0%EF%BC%8C%E6%8F%92%E5%85%A5%E3%80%81%E6%9B%BF%E6%8D%A2%E3%80%81%E5%AE%9A%E6%97%B6%E7%AD%89AI%E5%86%85%E5%AE%B9%E7%94%9F%E6%88%90)
@@ -146,4 +148,3 @@ obsidian-yuhanbo-ai-auto2.0/
 1. 启用插件
 ### 方法 2: 开发者安装
 
-1. 克隆仓库
