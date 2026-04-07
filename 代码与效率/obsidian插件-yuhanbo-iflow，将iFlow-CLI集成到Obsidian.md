@@ -6,7 +6,7 @@ github 开源地址：[yuhanbo758/obsidian-yuhanbo-iflow: Integrate iFlow CLI in
 
 gitee 开源地址：[obsidian-yuhanbo-iflow: Integrate iFlow CLI into Obsidian](https://gitee.com/yuhanbo758/obsidian-yuhanbo-iflow)
 
-bili 视频：
+bili 视频：[obsidian插件-yuhanbo-iflow，将iFlow CLI集成到Obsidian_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1rRDvBFE33/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
 [程序小店 - obsidian插件-yuhanbo-iflow](https://shop.sanrenjz.com/product/69d44995cc92ff8fa15356a8)
 
@@ -173,7 +173,13 @@ if (isFirstChar && fullText === '/' && isSlashCommand) {
 
 支持的命令：
 
-### 3.5 文件写入标签解析
+| 命令 | 功能 |
+| --- | --- |
+| /new | 清空对话 |
+| /save | 保存对话到 Markdown 文件 |
+| /compress | 压缩对话历史 |
+| /skills | 列出可用技能 |
+| /stop | 停止生成 |### 3.5 文件写入标签解析
 
 AI 响应中可包含特殊标签，插件自动解析并写入 Obsidian Vault：
 
@@ -200,7 +206,7 @@ if (normalizedRel.split('/').includes('..')) continue; // 拒绝路径遍历
 
 BM25（Best Match 25）是 TF-IDF 的改进版本，公式如下：
 
-\text{score}(D, Q) = \sum_{i=1}^{n} \text{IDF}(q_i) \cdot \frac{f(q_i, D) \cdot (k_1 + 1)}{f(q_i, D) + k_1 \cdot (1 - b + b \cdot \frac{|D|}{\text{avgdl}})}
+$\text{score}(D, Q) = \sum_{i=1}^{n} \text{IDF}(q_i) \cdot \frac{f(q_i, D) \cdot (k_1 + 1)}{f(q_i, D) + k_1 \cdot (1 - b + b \cdot \frac{|D|}{\text{avgdl}})}$
 
 其中：
 
@@ -288,7 +294,18 @@ interface IFlowScheduledTask {
 
 设置通过 IFlowSettingTab（继承 PluginSettingTab）实现，使用 Obsidian 原生的 Setting API 构建表单，支持以下配置项：
 
----
+| 配置 | 类型 | 说明 |
+| --- | --- | --- |
+| iFlowUrl | 文本 | WebSocket 连接地址 |
+| iFlowPath | 文本 | CLI 可执行文件目录 |
+| autoStartProcess | 开关 | 自动启动后台进程 |
+| templatePaths | 文本域 | 模板文件夹（多路径） |
+| skillsPaths | 文本域 | 技能文件夹（多路径） |
+| chatSavePath | 文本 | 对话保存目录 |
+| searchTopN | 数字 | 搜索返回条数 |
+| searchBm25K1/B | 数字 | BM25 参数 |
+| searchKeywordWeights | 文本域 | 关键词权重配置 |
+| 邮件配置 | 多项 | SMTP 参数 |---
 
 ## 八、代码流程图
 
@@ -352,7 +369,15 @@ flowchart TD
 
 ## 十、使用的编程语言与关键库
 
----
+| 技术 | 版本 | 用途 |
+| --- | --- | --- |
+| TypeScript | 4.7.4 | 主语言，提供类型安全 |
+| Obsidian API | ^1.5.7 | 插件框架、UI 组件、Vault 操作 |
+| @iflow-ai/iflow-cli-sdk | ^0.1.0 | WebSocket AI 通信 |
+| esbuild | 0.17.19 | TypeScript → JS 打包 |
+| Node.js net/tls | 内置 | TCP 端口探测 |
+| Node.js child_process | 内置 | 启动 iflow 子进程 |
+| Node.js fs | 内置 | 文件系统操作 |---
 
 ## 总结
 
