@@ -8,6 +8,8 @@ bili 视频 2：[Codebot-基于OpenCode的个人龙虾AI助手-2_哔哩哔哩_bi
 
 bili 视频 3：[Codebot-基于OpenCode的个人龙虾AI助手3_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1iDSRB6EN1/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
+bili 视频 4：[CodeBot：基于OpenCode的AI助手-4_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1tGQPBpEtc/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 ## 一、项目概述
 
 Codebot 是一款基于 OpenCode 平台打造的个人 AI 助手，具有跨平台、多通信渠道（飞书、邮箱）、丰富技能系统与高效记忆管理能力。项目以 Python3.11+ 为后端主力，配合 Electron 桌面端和 Vue3 前端，为开发者和普通用户提供灵活、智能、高扩展性的效率工具环境。
