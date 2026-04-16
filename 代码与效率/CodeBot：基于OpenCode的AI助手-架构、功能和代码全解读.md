@@ -10,6 +10,8 @@ bili 视频 3：[Codebot-基于OpenCode的个人龙虾AI助手3_哔哩哔哩_bil
 
 bili 视频 4：[CodeBot：基于OpenCode的AI助手-4_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1tGQPBpEtc/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
+bili 视频 5：[CodeBot：基于OpenCode的AI助手-5_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1UqdeBnERr/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 # 2.8.0 版本更新
 
 ### 一、代码修改与功能新增
