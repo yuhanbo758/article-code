@@ -2,6 +2,8 @@ OpenCode AI助手是一款将 OpenCode CLI 深度集成到 Obsidian 的插件，
 
 该插件采用 TypeScript 开发，基于 Obsidian Plugin API 构建，通过 HTTP REST API 与 SSE（Server-Sent Events）与 OpenCode CLI 后端通信，实现了流式对话、工具调用状态同步、会话管理等高级功能。同时，插件内置了完整的 BM25 搜索引擎，支持中文和英文关键词检索，为知识库问答提供了精准的本地搜索能力。
 
+bili 视频：[obsidian插件-yuhanbo-opencode：OpenCode 个人AI助手_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1ZndVBrEU6/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 程序小店：[程序小店 - obsidian插件-OpenCode AI助手](https://shop.sanrenjz.com/product/69e200389fb3f19a52aac20e)
 
 相关的开源插件：[obsidian插件-yuhanbo-iflow，将iFlow CLI集成到Obsidian | 余汉波 文档](https://www.yuhanbo.cn/article/obsidian%E6%8F%92%E4%BB%B6-yuhanbo-iflow%EF%BC%8C%E5%B0%86iFlow%20CLI%E9%9B%86%E6%88%90%E5%88%B0Obsidian)
