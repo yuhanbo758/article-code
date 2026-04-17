@@ -4,6 +4,8 @@ OpenCode AI助手是一款将 OpenCode CLI 深度集成到 Obsidian 的插件，
 
 程序小店：[程序小店 - obsidian插件-OpenCode AI助手](https://shop.sanrenjz.com/product/69e200389fb3f19a52aac20e)
 
+相关的开源插件：[obsidian插件-yuhanbo-iflow，将iFlow CLI集成到Obsidian | 余汉波 文档](https://www.yuhanbo.cn/article/obsidian%E6%8F%92%E4%BB%B6-yuhanbo-iflow%EF%BC%8C%E5%B0%86iFlow%20CLI%E9%9B%86%E6%88%90%E5%88%B0Obsidian)
+
 ## 核心架构
 
 ### 插件主类 IFlowPlugin
