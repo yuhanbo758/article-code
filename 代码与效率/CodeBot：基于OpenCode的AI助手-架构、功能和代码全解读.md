@@ -12,6 +12,131 @@ bili 视频 4：[CodeBot：基于OpenCode的AI助手-4_哔哩哔哩_bilibili](ht
 
 bili 视频 5：[CodeBot：基于OpenCode的AI助手-5_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1UqdeBnERr/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
+# 3.5.0 版本更新
+
+## 一、技能系统重构：来源分层与调用优先级
+
+### 1.1 技能来源三分类
+
+明确区分三类技能来源，不再混用：
+
+| 来源 | 说明 | 存储位置 | 可被谁调用 |
+| --- | --- | --- | --- |
+| 自动生成 | 由聊天或自动整理沉淀出来的技能 | C:\Users\yuhan\AppData\Roaming\codebot\skills | 仅 Codebot |
+| 内置 | Codebot 项目自带的技能 | skills/ 目录（随项目发布） | 仅 Codebot |
+| opencode | OpenCode CLI 自身的技能 | ~/.agents/skills | OpenCode 和 Codebot 均可调用 |自动生成 和 内置 技能只归 Codebot 管理，不会干扰 OpenCode CLI 的原有 skill 体系。
+
+### 1.2 技能调用优先级
+
+聊天时的技能查找顺序调整为：Codebot 自动生成 → Codebot 内置 → OpenCode 技能
+
+原先存在的问题：一进入聊天就直接触发 OpenCode skill，找不到就去创建，完全跳过了 Codebot 自己管理的技能。现在已修复。
+
+### 1.3 技能兼容性增强
+
+* 技能格式兼容 [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) 项目的设计思路
+* 同时兼容 openclaw 的 skill 结构，方便后续扩展和迁移
+### 1.4 技能页面新增功能
+
+* "安装技能"右侧新增 "程序小店" 按钮，打开 https://shop.sanrenjz.com/codebot
+* "批量处理"右侧新增 "skill 文件" 按钮，点击后直接打开 自动生成 skill 的存放目录
+## 二、记忆、技能与定时任务沉淀优化
+
+参考 [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) 开源项目的设计思路，对沉淀机制进行了系统性改进：
+
+* 记忆、技能、定时任务不再依赖单一触发词，而是从聊天结果、重复任务、稳定行为中持续提炼
+* 自动整理时会额外扫描新增聊天记录，联动补充记忆、定时任务与可复用技能沉淀
+* "记忆 → 配置 → 自动整理"在设定时间会真正触发整理并补漏，而不只是设置项
+* 目标是让系统"越用越懂你"，降低用户手动操作门槛
+## 三、自动升级与 GitHub CI/CD 发布流水线
+
+### 3.1 GitHub Actions 自动打包
+
+* 参考 [sanrenjz-tools](https://github.com/yuhanbo758/sanrenjz-tools/actions) 项目，配置了 .github/workflows/release.yml
+* 推送 main 分支后自动触发三平台（Windows / macOS / Linux）构建
+* 版本号自动按 minor 规则递增：1.1.0 → 1.2.0，1.9.0 → 2.0.0
+* 构建产物自动发布到 [GitHub Releases](https://github.com/yuhanbo758/codebot/releases)
+### 3.2 更新下载修复
+
+* 修复非会员或未登录用户从 GitHub Releases 下载时因资产命名不一致导致的 404 错误
+* 统一 Windows 安装包命名规则，确保自动更新链路可靠
+* 非会员或未登录用户默认从 GitHub 拉取更新
+### 3.3 对象存储更新（会员专属）
+
+若用户是程序小店"codebot"会员，可通过对象存储获取更新。
+
+推荐的对象存储目录结构：
+
+```plain text
+Download/
+└── codebot/
+    ├── latest.json          ← 版本清单（含最新版本号和下载 URL）
+    ├── 3.5.0/
+    │   ├── Codebot-Setup-3.5.0.exe
+    │   ├── Codebot-3.5.0.dmg
+    │   └── Codebot-3.5.0.AppImage
+    └── 3.4.0/
+        └── ...
+```
+
+客户端更新检测逻辑：
+
+1. 客户端读取 latest.json 获取最新版本号
+1. 对比本地版本，若有新版本则提示用户下载
+1. 客户端从对应版本目录下载安装包并执行安装
+这样既支持版本追溯，也方便会员直接拿到最新包。若只上传单个文件而没有版本清单，客户端无法可靠判断是否有更新。
+
+## 四、会员登录与程序小店联动
+
+### 4.1 右上角头像登录
+
+* 增加登录功能，站点为 https://shop.sanrenjz.com/
+* 应用内登录状态与程序小店会员状态保持联动：在应用内登录 = 在程序小店登录，反之亦然
+* 修复登录时出现"An object could not be cloned."的错误
+### 4.2 程序小店内置浏览器
+
+* 在技能页"安装技能"右侧新增入口，打开 https://shop.sanrenjz.com/codebot
+* 程序小店在内置浏览器中打开，支持刷新按钮重新加载页面
+* 修复用户登录后打开程序小店导致远端站点崩溃的 bug（权限范围已收缩至会员权限）
+### 4.3 会员技能下载
+
+* 会员选择产品后可直接下载，不再弹出保存路径对话框
+* 下载的 ZIP 文件自动解压到 自动生成 skill 存放位置
+* 下载的技能作为 自动生成 来源被 Codebot 调用
+## 五、UI 与体验优化
+
+### 5.1 菜单栏精简
+
+* 将"文档"从菜单栏移至"设置"页面的"沙箱配置"右侧，释放菜单空间
+### 5.2 聊天输入框增强
+
+* 支持粘贴截图：用户截图后可直接 Ctrl+V 粘贴图片到对话框
+### 5.3 对话分享修复
+
+* 修复分享链接在浏览器中无法打开对话内容的问题
+* 分享链接改为基于局域网 IP，而非 localhost，便于分享给他人访问
+### 5.4 归档对话查看
+
+* 归档的对话统一存放至"日志"页，用户可在日志页查看和恢复归档内容
+## 六、多 Agent 群聊功能
+
+### 6.1 功能定位
+
+* "多 Agent 群聊"置顶于对话列表，与普通对话区分
+* 普通对话有"删除"；群聊对话替换为"清空"，仅清空内容，不删除会话
+* "开始群聊"点击后变为"取消群聊"，支持用户随时取消
+### 6.2 多 Agent 协作机制
+
+不同对话可以加入群聊，各对话承担不同角色（如前端、后端、数据库、测试等），用户在"多 Agent 群聊"对话中发布任务，系统自动分配给对应角色的对话执行：
+
+* 支持串行执行：上一个 Agent 完成后，将结果转交给下一个 Agent
+* 支持并行执行：多个 Agent 同时处理各自任务
+* 支持终止：用户点击"终止"后，所有参与群聊的对话均停止
+### 6.3 任务过程可见
+
+* 用户发送任务后，"多 Agent 群聊"对话实时回显任务分配流程和各 Agent 的执行状态
+* 用户可以清楚看到任务如何被分配、每个 Agent 的处理结果，不再是黑盒
+* 内置多 Agent 协作调度技能（skills/multi-agent-collaboration/SKILL.md）
 # 2.8.0 版本更新
 
 ### 一、代码修改与功能新增
