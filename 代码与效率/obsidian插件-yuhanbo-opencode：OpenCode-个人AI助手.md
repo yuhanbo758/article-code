@@ -321,3 +321,16 @@ flowchart TD
 * 明确了从解析到注册再到触发的异步过程。
 这样修改后的流程图更符合一个基于 SSE 的 AI 插件/Agent 的真实运行机制。
 
+## 近期代码更新
+
+2026-05-11 — 本次更新集中在问答交互与聊天 UI 的即时状态同步与紧凑布局开关，使用户回答流程更自然并避免误发新任务。
+
+* opencode-adapter.ts:369：新增 HTTP 接口 POST /question/:requestID/reply 与 POST /question/:requestID/reject；并将 question.asked / question.replied / question.rejected 从普通工具日志改为“待处理交互（pending）”状态，便于前端正确呈现和阻塞后续任务。
+* chat-session-renderer.ts:50：在同一条助手消息内渲染问题按钮（reply/reject），用户回复后按钮会立即禁用并清理 pending 状态，避免重复提交与悬挂状态。
+* main.ts:2176：输入框行为改进：当存在 pending question 时，输入框按回车将优先作为该 pending question 的回答发送，而不是开启新的任务或生成新会话。
+* main.ts:4364：补上“紧凑模式”设置项并让聊天页即时响应布局开关（不再需重载），改善在不同屏幕/侧边栏宽度下的显示一致性。
+影响与建议：
+
+* 请补充单元/集成测试，覆盖 reply/reject API 路径与 pending 状态流转。
+* 前端需确保 SSE/状态更新链路在 question 状态变更时能及时刷新（避免 stale UI）。
+* 后端路由建议做鉴权与输入校验，防止恶意或重复提交。
