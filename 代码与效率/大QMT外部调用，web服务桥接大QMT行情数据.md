@@ -1,4 +1,6 @@
-程序小店：
+程序小店：[程序小店 - 大QMT外部调用，web服务桥接行情数据](https://shop.sanrenjz.com/python/%E5%A4%A7QMT%E5%A4%96%E9%83%A8%E8%B0%83%E7%94%A8%EF%BC%8Cweb%E6%9C%8D%E5%8A%A1%E6%A1%A5%E6%8E%A5%E8%A1%8C%E6%83%85%E6%95%B0%E6%8D%AE)
+
+开源地址：[yuhanbo758/bigqmt: 大QMT 行情桥接服务，向外部 Python 暴露本地 HTTP 行情接口](https://github.com/yuhanbo758/bigqmt)
 
 ## 快速概览与目标
 
