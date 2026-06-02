@@ -1,3 +1,5 @@
+程序小店：
+
 ## 快速概览与目标
 
 1. 在外部 Python 环境通过 HTTP 调用大QMT 的桥接服务，获取行情数据（tick、1m、5m、日线、分时等）。
@@ -20,6 +22,8 @@ http://127.0.0.1:1690
 ```bash
 pip install pandas
 ```
+
+![](https://xz.sanrenjz.com/image/%E5%A4%A7QMT%E5%A4%96%E9%83%A8%E8%B0%83%E7%94%A8%EF%BC%8Cweb%E6%9C%8D%E5%8A%A1%E6%A1%A5%E6%8E%A5%E5%A4%A7QMT%E8%A1%8C%E6%83%85%E6%95%B0%E6%8D%AE-16x9.png?imageSlim)
 
 ## 通用基础代码（桥接侧）
 
