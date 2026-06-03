@@ -1,12 +1,16 @@
+视频：[大QMT外部调用，web服务桥接大QMT行情数据_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1g6V16SEmX/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 程序小店：[程序小店 - 大QMT外部调用，web服务桥接行情数据](https://shop.sanrenjz.com/python/%E5%A4%A7QMT%E5%A4%96%E9%83%A8%E8%B0%83%E7%94%A8%EF%BC%8Cweb%E6%9C%8D%E5%8A%A1%E6%A1%A5%E6%8E%A5%E8%A1%8C%E6%83%85%E6%95%B0%E6%8D%AE)
 
 开源地址：[yuhanbo758/bigqmt: 大QMT 行情桥接服务，向外部 Python 暴露本地 HTTP 行情接口](https://github.com/yuhanbo758/bigqmt)
+
+证券开户：[证券开户免5万0.854，无门槛开量化QMT，送框架策略，支持VIP快速通道，也可开Ptrade | 余汉波 文档](https://docs.sanrenjz.com/article/%E8%AF%81%E5%88%B8%E5%BC%80%E6%88%B7%E5%85%8D5%20%E4%B8%870.854%EF%BC%8C%E6%97%A0%E9%97%A8%E6%A7%9B%E5%BC%80%E9%87%8F%E5%8C%96QMT%EF%BC%8C%E9%80%81%E6%A1%86%E6%9E%B6%E7%AD%96%E7%95%A5%EF%BC%8C%E6%94%AF%E6%8C%81VIP%E5%BF%AB%E9%80%9F%E9%80%9A%E9%81%93%EF%BC%8C%E4%B9%9F%E5%8F%AF%E5%BC%80Ptrade)
 
 ## 快速概览与目标
 
 1. 在外部 Python 环境通过 HTTP 调用大QMT 的桥接服务，获取行情数据（tick、1m、5m、日线、分时等）。
 1. 将返回的 JSON 统一转换为 pandas.DataFrame，方便像 akshare 一样直接打印、保存、分析、画图。
-1. 可选：把策略放在大QMTserver 中，通过 HTTP 将执行能力服务化，支持远程触发和管理。
+1. 把策略放在大QMTserver 中，通过 HTTP 将执行能力服务化，支持远程触发和管理。
 ## 使用前提
 
 1. 在大QMT 内置 Python 中启动桥接服务（示例）：
