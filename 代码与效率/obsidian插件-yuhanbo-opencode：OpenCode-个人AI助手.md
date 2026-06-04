@@ -2,7 +2,9 @@ OpenCode AI助手是一款将 OpenCode CLI 深度集成到 Obsidian 的插件，
 
 该插件采用 TypeScript 开发，基于 Obsidian Plugin API 构建，通过 HTTP REST API 与 SSE（Server-Sent Events）与 OpenCode CLI 后端通信，实现了流式对话、工具调用状态同步、会话管理等高级功能。同时，插件内置了完整的 BM25 搜索引擎，支持中文和英文关键词检索，为知识库问答提供了精准的本地搜索能力。
 
-bili 视频：[obsidian插件-yuhanbo-opencode：OpenCode 个人AI助手_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1ZndVBrEU6/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+bili 视频1：[obsidian插件-yuhanbo-opencode：OpenCode 个人AI助手_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1ZndVBrEU6/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
+bili 视频2：[obsidian插件-opencode-2：OpenCode 个人AI助手_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1WdEc6bEJ9/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
 程序小店：[程序小店 - obsidian插件-OpenCode AI助手](https://shop.sanrenjz.com/product/69e200389fb3f19a52aac20e)
 
@@ -199,11 +201,7 @@ interface IFlowScheduledTask {
 
 ### 三种写入模式
 
-| 模式 | 行为 |
-| --- | --- |
-| save | AI 结果写入 targetPath 指定文件夹的新文件 |
-| insert | 解析 sourcePath 中的 [[WikiLink]]，结果追加到被引用文件末尾 |
-| replace | 解析 WikiLink，结果覆盖被引用文件 |WikiLink 解析示例：
+WikiLink 解析示例：
 
 ```markdown
 翻译[[测试3]]，将文件中的中文翻译成英文。
@@ -335,4 +333,16 @@ flowchart TD
 * 聊天中的工具调用卡片默认折叠（collapsed），只在用户点击卡片标题时展开详细内容，改善信息密度并减少视觉干扰；建议将折叠状态记忆到会话本地状态，以便在短期内保持用户偏好。
 * 文档同步：同时更新了 AGENTS.md 与构建产物 main.js（用于发布/演示），请在发布前验证构建产物与源码一致，必要时重新运行构建脚本以确保版本匹配。
 小提示：实现图片粘贴功能时，前端应在保存附件成功后再插入 ![[...]]，并在保存失败时给用户可见的错误提示；同时后端/适配器需要对允许的图片类型与大小做限制并返回友好的错误信息。
+
+## 总结
+
+本文介绍并分析了将 OpenCode CLI 深度集成到 Obsidian 的插件架构与实现要点：
+
+* 插件以 TypeScript 开发，基于 Obsidian Plugin API，核心通过 OpenCodeAdapter 使用 HTTP + SSE 双通道与后端通信，支持流式响应与会话管理；
+* 每个对话对应独立 session，工作目录限定在 vault 内，配合 idle 防抖和 pending 消息队列实现稳定的工具调用与任务完成判定；
+* 内置 BM25 搜索（含中文 n-gram 处理）为本地知识库问答提供高效检索能力，并支持关键词权重调优；
+* Skills 与路径解析模块处理本地/绝对路径识别并同步 skills 到项目目录，保证插件与项目技能联动；
+* 定时任务系统支持 save/insert/replace 三种写入模式，并可结合邮件通知（SMTP）在任务完成后发送结果；
+* 近期改进包括：粘贴图片自动保存并插入、聊天 UI 的 pending question 处理与紧凑模式、工具卡片默认折叠等实用性与稳定性优化。
+插件设计兼顾可用性与可扩展性，适合作为在 Obsidian 中构建本地化、可编排 AI 助手的参考实现。
 
