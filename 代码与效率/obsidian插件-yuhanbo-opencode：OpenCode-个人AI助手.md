@@ -201,7 +201,11 @@ interface IFlowScheduledTask {
 
 ### 三种写入模式
 
-WikiLink 解析示例：
+| 模式 | 行为 |
+| --- | --- |
+| save | AI 结果写入 targetPath 指定文件夹的新文件 |
+| insert | 解析 sourcePath 中的 [[WikiLink]]，结果追加到被引用文件末尾 |
+| replace | 解析 WikiLink，结果覆盖被引用文件 |WikiLink 解析示例：
 
 ```markdown
 翻译[[测试3]]，将文件中的中文翻译成英文。
