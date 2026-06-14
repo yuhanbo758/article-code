@@ -14,6 +14,153 @@ bili 视频 5：[CodeBot：基于OpenCode的AI助手-5_哔哩哔哩_bilibili](ht
 
 bili 视频6：[CodeBot：基于OpenCode的AI助手-6_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1KCRtBFEVt/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
+# 4.3.0 版本更新
+
+## 一、Hermes Agent 深度集成
+
+### 1.1 Hermes 接入重构
+
+* Hermes 已从 Gateway 收敛为 CLI oneshot，聊天中选择 Hermes 后由 Codebot 调用 hermes -z
+* Codebot 只作为薄适配层：写入共享配置（模型网关、记忆库、定时任务库、技能目录和 Obsidian 路径），启动 Hermes CLI 子进程，把终端输出持续追加到当前聊天气泡
+* 重构后的 Hermes 接入不再导入 Hermes 内部 Agent 类，也不再依赖自定义 runner
+* 聊天执行入口已从顶层 hermes -z/--oneshot 切换为 Hermes 官方 --cli chat -q 单次查询路径
+* 当 CLI 明确要求确认、继续、密码、密钥或输入时，会在聊天页显示交互面板，并把用户回答写回 Hermes stdin
+### 1.2 Hermes 运行状态可视化
+
+* 若 CLI 长时间暂时没有正文输出，Codebot 会在聊天窗口中持续映射 Hermes 运行状态：包括 session.status 启动状态、session.trace 运行轨迹，以及非阻塞的 session.idle 后台心跳
+* 明显像"加载 skill / 调用 tool / 扫描资源 / 运行步骤"的 Hermes 行优先归类成可见的"工具调用"事件，其余普通说明继续归类为"运行轨迹"
+* 针对"启动后长时间 0 输出但同消息重试可成功"的间歇性卡死，Codebot 会在 Hermes 启动后连续 90 秒仍无任何 stdout 时自动重试 1 次
+### 1.3 Hermes 技能共享与兼容分流
+
+* Hermes 的 skill 共享模型统一收敛为"目录共享"：Codebot 会把 Hermes Agent 自身默认可发现的 skill 目录、用户手动配置的 Hermes Skill 目录、Codebot 内置/自动生成 skills 目录、以及 OpenCode CLI skill roots 一起并入 Hermes 的有效 skills.external_dirs
+* 对于"显式点名且来源于 OpenCode 共享目录"的 skill，Codebot 会先检测 Hermes 兼容分流：运行时证据表明某些 OpenCode-shared skill 会在 Hermes 子进程中长期静默卡住，因此这类请求会透明切换到 OpenCode 原生执行链
+* Hermes 不要求用户单独配置模型：聊天主模型跟随当前聊天模型，后台辅助模型跟随"记忆 → 自动整理 → 整理使用模型"
+### 1.4 Hermes 输出优化
+
+* 对 Hermes stdout 使用增量 UTF-8 解码，并过滤 ANSI 控制序列、Rich 边框、Resume this session / session_id / Session 等终端辅助行
+* Hermes 执行超时按"空闲无输出/无交互"计算；终止按钮会结束当前 Hermes 进程
+* Hermes 模式下沉淀或创建的定时任务会记录 executor=hermes，后续到点触发时继续由 Hermes CLI 执行
+## 二、Obsidian 知识库集成
+
+### 2.1 多知识库支持
+
+* 设置页中的 Obsidian 标签支持配置默认 Vault 路径与多个知识库路径
+* 聊天页通过 # 可多选知识库
+* Codebot 会把这些 Markdown 知识库当成原生 Obsidian wiki 结构直接处理，优先引导调用 obsidian-cli 与相关 Obsidian skill 去完成检索、模板调用、读取、写入、移动与 wiki-link 安全操作，不会把知识库先转成向量库
+### 2.2 技能与命令搜索增强
+
+* 聊天输入框中的 @ 会搜索全部技能来源，包括 Codebot 内置/自动生成、OpenCode、Hermes Agent 与 OpenClaw，支持描述、单词和多词搜索
+* 聊天输入框中的 / 会搜索 OpenCode CLI 命令，并支持按描述、单词和多词进行匹配
+## 三、模型管理与对话状态
+
+### 3.1 模型刷新与 CLI 集成
+
+* 聊天页模型刷新会优先调用 opencode models，与 OpenCode CLI 的最新模型列表保持一致
+* 若 Codebot 进程 PATH 与终端不同，可在 config.json 的 opencode.cli_path 填写 opencode 可执行文件或所在目录，也可以设置环境变量 CODEBOT_OPENCODE_PATH
+* Windows 桌面端还会额外自动探测 %APPDATA%\npm、Scoop shim、WinGet Links、Chocolatey bin 等常见 CLI 安装位置
+* Codebot 自己拉起 OpenCode Server 时，会将用户全局 ~/.config/opencode/opencode.json 里的 provider 合并到 data/opencode-config/opencode.json，并通过 OPENCODE_CONFIG_HOME=data/opencode-config 启动 OpenCode
+* 刷新模型不会自动切换 OpenCode Server 地址，避免模型列表和实际聊天运行时不一致
+### 3.2 对话级状态独立
+
+* 每个普通对话会独立保存当前模式、模型、Hermes/Obsidian 目标和已选知识库
+* 在 B 对话切换模型或处理目标，不会覆盖 A 对话原来的选择
+* 新建对话仍会沿用最近主动选择的全局默认模型，创建后再形成自己的独立状态
+### 3.3 定时任务执行器与模型绑定
+
+* 定时任务会持久化 executor 字段。聊天中选择 Hermes 后沉淀的任务、成长候选接受后的任务和手动编辑为 Hermes 的任务，到点执行时会调用 Hermes CLI；选择 OpenCode 或未指定时走 OpenCode
+* 聊天中创建定时任务时，会把当时选择的主模型保存为任务的 execution_model；任务执行前会检查该模型是否仍在当前可用模型列表中，如果模型过时或供应商不再提供，会自动回退到"记忆 → 自动整理 → 整理使用模型"
+* 在"定时任务"编辑窗口中可以为任务重新选择可用模型
+### 3.4 调度边界控制
+
+* 聊天中的定时任务创建意图由 AI 结构化分类器判断；只有判断为"创建/添加/设置 Codebot 定时任务、提醒或闹钟"时，Codebot 才会写入内置定时任务系统或成长候选
+* 普通排错、日志分析和文件处理会继续交给 OpenCode/Hermes CLI，不会被误创建为任务
+* Codebot 也不会让 CLI 立即创建 PowerShell 后台作业、Windows schtasks、cron/systemd/launchd 等系统级定时器
+## 四、技能系统增强
+
+### 4.1 对话生成技能
+
+* 聊天页点击"生成技能"后，后端会先调用 find-skills 搜索并评估现有 skill
+* 当最佳结果与需求差异小于 40%（即相似度至少 60%）时，Codebot 会基于该 skill 改造并保存
+* 否则会继续调用 skill-creator 创建新 skill
+* 最终产物统一迁移或写入 skills/auto_*，在技能页中归类为"自动生成"
+### 4.2 内部上下文隔离
+
+* 技能与 MCP 上下文仅用于内部推理，不向用户直接展示"技能参考"等标签
+## 五、流式响应与事件展示优化
+
+### 5.1 流式链路升级
+
+* 流式链路采用 prompt_async + /global/event，可实时看到工具调用与文本增量
+* 前端按事件实时追加渲染（步骤/工具事件逐条显示，正文增量分块刷新，不等待最终完成）
+* 为避免浏览器渲染被单次大量事件阻塞，前端会在流式消费中定期让出事件循环，并将文本增量按帧合并刷新
+### 5.2 后台事件回放
+
+* 从"技能/设置"等页面返回聊天页后，会自动恢复当前对话的"处理中/排队中"状态，并在任务结束后自动刷新最新消息
+* 从其他页面返回聊天页后，会按当前对话回放后台执行期间的工具调用事件，并保持原有事件顺序与展示位置
+* 后台事件回放与数据库最终消息会做去重收敛，避免同一回复先流式出现后又重复插入一次
+### 5.3 消息展示优化
+
+* 回答入库与展示前会自动清洗 system_policy/conversation_context 等内部提示片段，避免污染最终回复与对话标题
+* 聊天时间显示会将 SQLite 的 UTC 时间戳按本地时区换算，并正确显示"刚刚/分钟前/小时前"
+* 聊天相对时间会自动刷新，避免时间长期停留在"刚刚"
+* 用户手动上滑查看历史消息时，流式更新不再强制自动滚动到底部；仅在接近底部或主动发送消息时自动跟随
+* 消息操作按钮（复制/撤销）统一固定在回复气泡右下角
+* 应用与对话回复头像使用 logo.ico
+## 六、记忆系统增强
+
+### 6.1 聊天记忆分类补充
+
+* 聊天中手动"记住"时会优先识别偏好（喜欢/偏好/风格/工具等）和习惯（通常/经常/常用等），再识别联系方式和地址，最后才判断个人信息，避免使用偏好被误归为个人信息或联系人
+### 6.2 AI 记忆提取增强
+
+* AI 自动提取记忆时，系统提示词包含严格的分类边界定义和示例，确保偏好/习惯不被错误归类
+### 6.3 事实同步与删除联动
+
+* 打开活跃记忆列表时，会将生日类事实记忆自动补齐到长期记忆，避免"有事实但列表为空"
+* 删除带 memory_key/fact_key 的长期记忆时会同步归档对应事实，防止生日等条目被自动补回
+### 6.4 存储诊断与一键自检
+
+* 提供 /api/memory/storage-status，可直接查看当前数据库路径与表计数
+* 活跃记忆页支持"一键自检"，会检测数据库路径、关键表计数和接口读链路状态
+## 七、定时任务增强
+
+### 7.1 候选通知
+
+* 定时任务页顶部的"开启通知"控制任务候选提醒
+* 开启后，聊天或自动整理把定时任务加入"成长候选"时会发送应用内/桌面操作提醒，便于及时打开"成长候选"确认、编辑或接受
+### 7.2 意图识别优化
+
+* 判断依据：同时满足"触发词（提醒/通知/闹钟等）+ 时间或日期线索（每天/周几/几点/10月20日等）"时优先判为定时任务
+## 八、OpenAI 兼容模型网关
+
+* Codebot 提供 OpenAI 兼容接口：GET /v1/models 和 POST /v1/chat/completions
+* 使用前请先请求 /v1/models，从返回结果里的 id 选择当前真实可用的模型
+* 如果直接调用 HTTP 接口而不是 OpenAI SDK，model 字段可以省略；此时后端会优先使用记忆自动整理模型 memory.organize_model，若未设置则回退到聊天页默认模型
+## 九、连接状态与启动优化
+
+### 9.1 连接状态刷新
+
+* 聊天页顶部会显示 OpenCode / Bridge / MCP 代理状态，并支持手动刷新连接与模型列表
+### 9.2 OpenCode Server 自动拉起
+
+* 桌面端启动后端时会自动尝试拉起 OpenCode 服务，并统一优先使用 127.0.0.1:11200
+* npm start 开发模式也会跟正式版一样优先连到 11200，避免误起另一套 dev server
+* 如需覆盖默认值，可设置环境变量 CODEBOT_OPENCODE_PREFERRED_PORT 与 CODEBOT_OPENCODE_FALLBACK_PORT
+* 桌面端会强制开启 OpenCode 自动拉起；如果系统里已经有 OpenCode 桌面端或 opencode serve 在运行，Codebot 会直接复用现有健康服务并跳过额外安装检查
+### 9.3 后台自动启动（Windows 任务计划程序）
+
+* 支持通过 Windows 任务计划程序配置 opencode serve 开机自启，详细步骤已写入文档
+## 十、分享与归档
+
+* 点击左侧对话更多菜单里的"分享"后，系统会生成 /share/{share_id} 只读页面，并复制基于局域网地址的链接
+* 分享页面只展示对话内容，不提供继续发送消息、删除或修改能力
+* 点击"归档"后，对话仍保存在 data/conversations.db 中，conversations.is_archived 会被设置为 1
+* 归档后的对话不会显示在聊天页左侧普通对话列表中，可在"日志"页的"已归档对话"标签中查看、搜索和恢复
+## 十一、自动沉淀技能优化
+
+* 自动沉淀技能仅在复杂任务场景触发，过滤寒暄类和系统提示词污染内容，避免生成无意义技能
+---
+
 # 3.5.0 版本更新
 
 ## 一、技能系统重构：来源分层与调用优先级
