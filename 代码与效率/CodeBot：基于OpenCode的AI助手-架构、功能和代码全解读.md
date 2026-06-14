@@ -16,6 +16,8 @@ bili 视频 5：[CodeBot：基于OpenCode的AI助手-5_哔哩哔哩_bilibili](ht
 
 bili 视频6：[CodeBot：基于OpenCode的AI助手-6_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1KCRtBFEVt/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
+bili 视频7：[CodeBot：基于OpenCode的AI助手，兼容Hermes和Obsidian_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1smJA6iEjL/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
 # 4.3.0 版本更新
 
 * 新增 4.3.0 版本更新内容（覆盖 v3.6.0 → v4.3.0 的累积变更），包含 11 个大章节：
