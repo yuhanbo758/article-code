@@ -24,28 +24,11 @@
 * 参数: positions (list): 持仓信息对象列表。
 * 功能: 将接收到的持仓信息保存到数据库的 account_holdings 表中。
 * on_disconnected(self)
-* 连接断开回调。
-* 功能: 当连接断开时，打印提示信息并重置全局变量 schedule_thread。
 * on_stock_order(self, order)
-* 委托回报推送。
-* 参数: order (XtOrder): 委托信息对象。
-* 功能: 打印委托回报信息，包括证券代码、委托状态和委托系统编号。
 * on_order_error(self, order_error)
-* 委托失败推送。
-* 参数: order_error (XtOrderError): 委托错误信息对象。
-* 功能: 打印委托失败信息，包括订单编号、错误代码和错误信息。
 * on_cancel_error(self, cancel_error)
-* 撤单失败推送。
-* 参数: cancel_error (XtCancelError): 撤单错误信息对象。
-* 功能: 打印撤单失败信息，包括订单编号、错误代码和错误信息。
 * on_order_stock_async_response(self, response)
-* 异步下单回报推送。
-* 参数: response (XtOrderResponse): 异步下单回报信息对象。
-* 功能: 打印异步下单回报信息，包括资金账号、订单编号和序号。
 * on_account_status(self, status)
-* 账户状态推送。
-* 参数: status (XtAccountStatus): 账户状态信息对象。
-* 功能: 打印账户状态信息，包括资金账号、账户类型和账户状态。
 ## 示例
 
 ```python
