@@ -4,18 +4,7 @@
 
 ### 参数
 
-| 参数名 | 类型 | 说明 |
-| --- | --- | --- |
-| conn | object | 数据库连接对象。 |
-| magic | int | EA 编号。 |
-| symbol | str | 交易品种名称，例如 "EURUSD"。 |
-| volume | float | 交易量。 |
-| price | float | 限价委托价格。 |
-| sl | float | 止损价格。 |
-| tp | float | 止盈价格。 |
-| deviation | int | 价格偏差。 |
-| type | int | 订单类型，例如 0 代表买入，1 代表卖出。 |
-| comment | str | 订单注释。 |### 用法
+### 用法
 
 调用 limit_order_fn 函数，传入数据库连接对象和其他参数，将数据插入到数据库中。
 
