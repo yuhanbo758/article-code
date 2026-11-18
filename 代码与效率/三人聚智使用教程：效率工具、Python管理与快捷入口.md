@@ -1,6 +1,8 @@
 bili 视频：[三人聚智使用教程：效率工具、Python管理与快捷入口_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1QvWX6aE7o/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
-软件下载：[Python程序管理工具：脚本运行、依赖管理与下载 | 三人聚智](https://www.sanrenjz.com/sanrenjz/)
+主站软件下载：[Python程序管理工具：脚本运行、依赖管理与下载 | 三人聚智](https://www.sanrenjz.com/sanrenjz/)
+
+github 开源：[yuhanbo/sanrenjz: 三人聚智完整开发源码私有备份（包含非开源插件） - sanrenjz - sanrenjz](http://192.168.31.143:10082/yuhanbo/sanrenjz)
 
 桌面工具越用越多，真正麻烦的常常是找入口：有的程序藏在文件夹里，有的功能需要记住名字，Python 小程序又各自带着环境和依赖。三人聚智把这些入口放进一个主程序，日常先找工具，需要时再打开对应窗口。
 
