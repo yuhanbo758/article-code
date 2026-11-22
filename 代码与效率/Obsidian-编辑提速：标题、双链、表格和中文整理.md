@@ -1,5 +1,11 @@
 写项目周报时，可以用 yuhanbo-editing 切标题、引用已有笔记、给重点内容加粗或高亮，再把表格搬进正文。遇到混用的中文标点和繁体字，也能在编辑器中直接转换。下文用一个独立演示库走一遍这些操作。
 
+bili 视频：[Obsidian 编辑提速：标题、双链、表格和中文整理_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1rPyGzPEBh/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
+程序小店：[程序小店 - obsidian插件-yuhanbo-editing 编辑增强](https://shop.sanrenjz.com/obsidian/obsidian%E6%8F%92%E4%BB%B6-yuhanbo-editing-%E7%BC%96%E8%BE%91%E5%A2%9E%E5%BC%BA)
+
+* [安装与使用文档](https://github.com/yuhanbo758/obsidian-yuhanb-editing)
+* [安装文件下载（GitHub Releases）](https://github.com/yuhanbo758/obsidian-yuhanb-editing/releases/latest)
 ![](https://xz.sanrenjz.com/image/%E8%A7%86%E9%A2%91%E5%B0%81%E9%9D%A2_16%E6%AF%949_112.png?imageSlim)
 
 ## 从哪里安装和打开
