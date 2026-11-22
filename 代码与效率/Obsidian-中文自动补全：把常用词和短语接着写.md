@@ -1,8 +1,10 @@
+程序小店：[程序小店 - obsidian插件-yuhanbo-autocomplete，中文自动补全](https://shop.sanrenjz.com/obsidian/obsidian%E6%8F%92%E4%BB%B6-yuhanbo-autocomplete%EF%BC%8C%E4%B8%AD%E6%96%87%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8)
+
 * [安装与使用文档](https://github.com/yuhanbo758/obsidian-yuhanbo-autocomplete#使用)
 * [实操视频（百家号）](https://mbd.baidu.com/newspage/data/videolanding?nid=sv_2113174925477484216)
 * [实操视频（B 站）](https://www.bilibili.com/video/BV1TJyLzQE3E/)
 * [安装文件下载（GitHub Release）](https://github.com/yuhanbo758/obsidian-yuhanbo-autocomplete/releases/latest)
-https://f7.baidu.com/it/u=2037782966,1480562757&fm=222&app=106&f=PNG
+![](https://xz.sanrenjz.com/image/%E8%A7%86%E9%A2%91%E5%B0%81%E9%9D%A2_16%E6%AF%949_Obsidian%20%E4%B8%AD%E6%96%87%E8%A1%A5%E5%85%A8.png?imageSlim)
 
 写项目笔记时经常重复输入「提示词」「项目回顾」之类的表达。yuhanbo-autocomplete 会在编辑器光标附近给出候选，选择后即可补全。它优先支持中文，同时可以补全英文术语、笔记链接和自己的固定短语。
 
