@@ -1,3 +1,5 @@
+程序小店：[程序小店 - obsidian插件-Yuhanbo Task，任务管理与番茄钟](https://shop.sanrenjz.com/obsidian/obsidian%E6%8F%92%E4%BB%B6-Yuhanbo-Task%EF%BC%8C%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E4%B8%8E%E7%95%AA%E8%8C%84%E9%92%9F)
+
 * [安装与使用文档](https://github.com/yuhanbo758/obsidian-yuhanbo-task/blob/main/README.md)
 * [实操视频（B 站）](https://www.bilibili.com/video/BV1WoyRzZEZ9/)
 * [安装文件下载（GitHub Release 1.1.5）](https://github.com/yuhanbo758/obsidian-yuhanbo-task/releases/tag/1.1.5)
