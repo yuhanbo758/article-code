@@ -1,3 +1,10 @@
+程序小店：[程序小店 - obsidian插件-Yuhanbo Python Runner](https://shop.sanrenjz.com/obsidian/obsidian%E6%8F%92%E4%BB%B6-Yuhanbo-Python-Runner)
+
+* [安装与使用文档（2.0.3）](https://github.com/yuhanbo758/obsidian-yuhanbo-python/blob/2.0.3/README.md)
+* [Obsidian 社区插件页](https://community.obsidian.md/plugins/yuhanbo-python-runner)
+* [实操视频（百家号）](https://mbd.baidu.com/newspage/data/videolanding?nid=sv_12535197982559818886)
+* [实操视频（B 站）](https://www.bilibili.com/video/BV1ik1czaEzo/)
+* [安装文件下载（GitHub Release 2.0.3）](https://github.com/yuhanbo758/obsidian-yuhanbo-python/releases/tag/2.0.3)
 每周都要统计工时，先算总数，再算平均值，最后把结果整理进周报。脚本和周报通常分开存放。用 Yuhanbo Python Runner，可以把 Python 代码直接写进 Obsidian 笔记，临时需要时点一下运行，固定要做的事则交给定时任务，运行结果会存成一篇新的 Markdown 笔记。
 
 下面用一份模拟周报演示。五天工时分别为 6、7、5、8、4 小时，预期得到总工时 30 小时、日均 6.0 小时，还有一行检查提示。用这三个结果可以逐步核对代码块、整篇运行和定时任务。
