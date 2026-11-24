@@ -1,5 +1,11 @@
 Yuhanbo Search 是一款 Obsidian 社区插件，提供按字段设置权重的笔记搜索，也能直接在编辑器里插入正文、标题双链和块链接。下面用写项目复盘的场景演示这两项功能，再实测文件夹范围和搜索权重如何改变结果。
 
+程序小店：[程序小店 - obsidian插件-Yuhanbo Search，加权搜索与智能补全](https://shop.sanrenjz.com/obsidian/obsidian%E6%8F%92%E4%BB%B6-Yuhanbo-Search%EF%BC%8C%E5%8A%A0%E6%9D%83%E6%90%9C%E7%B4%A2%E4%B8%8E%E6%99%BA%E8%83%BD%E8%A1%A5%E5%85%A8)
+
+* [安装与使用文档](https://github.com/yuhanbo758/obsidian-yuhanbo-search/blob/main/README.md)
+* [实操视频（百家号）](https://mbd.baidu.com/newspage/data/videolanding?nid=sv_12291758753464308950)
+* [实操视频（B 站）](https://www.bilibili.com/video/BV1kT1FzqEZp/)
+* [安装文件下载（GitHub Release 3.0.6）](https://github.com/yuhanbo758/obsidian-yuhanbo-search/releases/tag/3.0.6)
 ![](https://xz.sanrenjz.com/image/%E8%A7%86%E9%A2%91%E5%B0%81%E9%9D%A2_16%E6%AF%949_Obsidian%20%E5%8A%A0%E6%9D%83%E6%90%9C%E7%B4%A2.png?imageSlim)
 
 ## 1. 在 Obsidian 里安装并打开插件
@@ -34,7 +40,12 @@ Yuhanbo Search 是一款 Obsidian 社区插件，提供按字段设置权重的�
 
 ## 4. 智能补全设置
 
-实录先输入 @@共用模板，候选有两条。进入 设置 → Yuhanbo Search → 智能补全搜索文件夹 填入 演示资料，回到草稿重试，候选只剩资料目录里的那条。
+| 设置 | 3.0.6 默认值 | 效果 |
+| --- | --- | --- |
+| 启用智能补全 | 开启 | 控制正文、标题和块三种编辑器候选 |
+| 智能补全搜索文件夹 | 留空 | 留空时查全部可用目录。填入相对于库根目录的路径后，只查指定目录及其子目录。多个路径用半角逗号分隔 |
+| 中文最小搜索长度 | 2 个字，范围 1–5 | 中文关键词达到此长度即可触发 |
+| 英文最小搜索长度 | 4 个字母，范围 2–8 | 英文关键词达到此长度即可触发 |实录先输入 @@共用模板，候选有两条。进入 设置 → Yuhanbo Search → 智能补全搜索文件夹 填入 演示资料，回到草稿重试，候选只剩资料目录里的那条。
 
 ## 5. 九项搜索权重与排序
 
