@@ -1,3 +1,10 @@
+程序小店：[程序小店 - obsidian插件-yuhanbo-image-upload，图片上传](https://shop.sanrenjz.com/obsidian/obsidian%E6%8F%92%E4%BB%B6-yuhanbo-image-upload%EF%BC%8C%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0)
+
+bili 视频：[Obsidian 图片上传插件完整教程：配置图床、上传与下载_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1vFymz9Ekx/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
+
+* [安装与使用文档](https://github.com/yuhanbo758/obsidian-yuhanbo-image_upload/blob/main/README-zh.md)
+* [下载插件文件（GitHub Release）](https://github.com/yuhanbo758/obsidian-yuhanbo-image_upload/releases/latest)
+* [Obsidian 社区插件页](https://community.obsidian.md/plugins/yuhanbo-image-upload)
 一篇笔记里既有本地截图，又有早已发布的网络图时，怎样批量上传并保留原有链接？桌面插件 yuhanbo-image-upload 可以一次上传整篇笔记里的本地图，也能通过右键只上传一张。网络图需要离线查看时，还能把它们保存回笔记库。
 
 ![](https://xz.sanrenjz.com/image/%E8%A7%86%E9%A2%91%E5%B0%81%E9%9D%A2_16%E6%AF%949_Obsidian%20%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0.png?imageSlim)
