@@ -1,9 +1,10 @@
 开会时，把议程和记录并排打开。写稿时，再换成提纲和参考资料。yuhanbo-workspaces 可以把这两组标签页分别保存为「会议桌」和「写作台」，下次直接从切换器加载整套布局。收藏的工作区会排在列表顶部，也可以在修改前复制布局或备份配置。
 
-程序小店：
-
+程序小店：[程序小店 - obsidian插件-yuhanbo-workspaces，工作区管理](https://shop.sanrenjz.com/obsidian/obsidian%E6%8F%92%E4%BB%B6-yuhanbo-workspaces%EF%BC%8C%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%AE%A1%E7%90%86)
 bili 视频：[Obsidian 工作区管理：保存、切换与备份布局_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1tG1MzKE6g/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
+* [Obsidian 社区插件目录](https://community.obsidian.md/plugins/yuhanbo-workspaces)
+* [安装文件下载](https://github.com/yuhanbo758/obsidian-yuhanbo-workspaces/releases/tag/0.9.7)
 ![](https://xz.sanrenjz.com/image/%E8%A7%86%E9%A2%91%E5%B0%81%E9%9D%A2_16%E6%AF%949_Obsidian%20%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%AE%A1%E7%90%86.png?imageSlim)
 
 本教程演示 Obsidian 1.15.1 桌面端和 yuhanbo-workspaces 0.9.7，使用四份虚构笔记。[社区目录](https://community.obsidian.md/plugins/yuhanbo-workspaces) · [版本与安装文件](https://github.com/yuhanbo758/obsidian-yuhanbo-workspaces/releases/tag/0.9.7)
