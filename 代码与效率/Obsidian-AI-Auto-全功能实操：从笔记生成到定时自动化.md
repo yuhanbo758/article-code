@@ -1,6 +1,6 @@
 余汉波 AI Auto 是 Obsidian 的 AI 写作与自动化插件。它能生成内容并写回笔记、检索知识库，也能运行定时任务。视频先介绍这三项能力，再从安装入口起步，逐项走完设置、操作和结果核对。每节的时间是视频章节位置。下面用同一批虚构资料讲解 yuhanbo-ai-auto 3.1.2 的入口、设置和结果。插件面向 Obsidian 桌面版，需要 1.15.1 或更新版本。
 
-程序小店：
+程序小店：[程序小店 - obsidian插件-yuhanbo-ai-auto](https://shop.sanrenjz.com/obsidian/obsidian%E6%8F%92%E4%BB%B6-yuhanbo-ai-auto)
 
 bili 视频： [https://www.bilibili.com/video/BV1HT1uzbEht/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70](https://www.bilibili.com/video/BV1HT1uzbEht/?vd_source=247ac77d4ae7339ea06d0fec09aa8f70)
 
